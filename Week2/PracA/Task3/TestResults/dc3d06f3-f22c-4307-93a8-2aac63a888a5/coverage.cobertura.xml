@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<coverage line-rate="0.875" branch-rate="1" version="1.9" timestamp="1786422472" lines-covered="42" lines-valid="48" branches-covered="6" branches-valid="6">
+  <sources>
+    <source>/</source>
+  </sources>
+  <packages>
+    <package name="Task2" line-rate="0.875" branch-rate="1" complexity="13">
+      <classes>
+        <class name="Payroll.Payroll" filename="Users/songci/Desktop/COMP2021/COMP2021-2026-2-profolio-a1952124/Week2/PracA/Task2/Payroll.cs" line-rate="1" branch-rate="1" complexity="12">
+          <methods>
+            <method name="get_Hours" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="15" hits="1" branch="False" />
+                <line number="16" hits="1" branch="False" />
+                <line number="17" hits="1" branch="False" />
+              </lines>
+            </method>
+            <method name="set_Hours" signature="(System.Double)" line-rate="1" branch-rate="1" complexity="2">
+              <lines>
+                <line number="20" hits="7" branch="False" />
+                <line number="21" hits="7" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="15" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="22" hits="1" branch="False" />
+                <line number="23" hits="1" branch="False" />
+                <line number="26" hits="6" branch="False" />
+                <line number="27" hits="6" branch="False" />
+              </lines>
+            </method>
+            <method name="get_Rate" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="33" hits="2" branch="False" />
+                <line number="34" hits="2" branch="False" />
+                <line number="35" hits="2" branch="False" />
+              </lines>
+            </method>
+            <method name="set_Rate" signature="(System.Decimal)" line-rate="1" branch-rate="1" complexity="2">
+              <lines>
+                <line number="38" hits="6" branch="False" />
+                <line number="39" hits="6" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="14" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="40" hits="1" branch="False" />
+                <line number="41" hits="1" branch="False" />
+                <line number="44" hits="5" branch="False" />
+                <line number="45" hits="5" branch="False" />
+              </lines>
+            </method>
+            <method name="get_TaxRate" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="53" hits="3" branch="False" />
+                <line number="54" hits="3" branch="False" />
+                <line number="55" hits="3" branch="False" />
+              </lines>
+            </method>
+            <method name="set_TaxRate" signature="(System.Decimal)" line-rate="1" branch-rate="1" complexity="2">
+              <lines>
+                <line number="58" hits="7" branch="False" />
+                <line number="59" hits="7" branch="True" condition-coverage="100% (2/2)">
+                  <conditions>
+                    <condition number="14" type="jump" coverage="100%" />
+                  </conditions>
+                </line>
+                <line number="60" hits="2" branch="False" />
+                <line number="61" hits="2" branch="False" />
+                <line number="64" hits="5" branch="False" />
+                <line number="65" hits="5" branch="False" />
+              </lines>
+            </method>
+            <method name="CalculateNetPay" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="78" hits="1" branch="False" />
+                <line number="79" hits="1" branch="False" />
+                <line number="81" hits="1" branch="False" />
+                <line number="83" hits="1" branch="False" />
+                <line number="85" hits="1" branch="False" />
+                <line number="87" hits="1" branch="False" />
+              </lines>
+            </method>
+            <method name="ChangeTaxRate" signature="(System.Decimal)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="94" hits="2" branch="False" />
+                <line number="95" hits="2" branch="False" />
+                <line number="97" hits="1" branch="False" />
+              </lines>
+            </method>
+            <method name=".ctor" signature="(System.Double,System.Decimal,System.Decimal)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="67" hits="7" branch="False" />
+                <line number="68" hits="7" branch="False" />
+                <line number="71" hits="7" branch="False" />
+                <line number="72" hits="6" branch="False" />
+                <line number="73" hits="5" branch="False" />
+                <line number="74" hits="4" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="15" hits="1" branch="False" />
+            <line number="16" hits="1" branch="False" />
+            <line number="17" hits="1" branch="False" />
+            <line number="20" hits="7" branch="False" />
+            <line number="21" hits="7" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="15" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="22" hits="1" branch="False" />
+            <line number="23" hits="1" branch="False" />
+            <line number="26" hits="6" branch="False" />
+            <line number="27" hits="6" branch="False" />
+            <line number="33" hits="2" branch="False" />
+            <line number="34" hits="2" branch="False" />
+            <line number="35" hits="2" branch="False" />
+            <line number="38" hits="6" branch="False" />
+            <line number="39" hits="6" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="14" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="40" hits="1" branch="False" />
+            <line number="41" hits="1" branch="False" />
+            <line number="44" hits="5" branch="False" />
+            <line number="45" hits="5" branch="False" />
+            <line number="53" hits="3" branch="False" />
+            <line number="54" hits="3" branch="False" />
+            <line number="55" hits="3" branch="False" />
+            <line number="58" hits="7" branch="False" />
+            <line number="59" hits="7" branch="True" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="14" type="jump" coverage="100%" />
+              </conditions>
+            </line>
+            <line number="60" hits="2" branch="False" />
+            <line number="61" hits="2" branch="False" />
+            <line number="64" hits="5" branch="False" />
+            <line number="65" hits="5" branch="False" />
+            <line number="78" hits="1" branch="False" />
+            <line number="79" hits="1" branch="False" />
+            <line number="81" hits="1" branch="False" />
+            <line number="83" hits="1" branch="False" />
+            <line number="85" hits="1" branch="False" />
+            <line number="87" hits="1" branch="False" />
+            <line number="94" hits="2" branch="False" />
+            <line number="95" hits="2" branch="False" />
+            <line number="97" hits="1" branch="False" />
+            <line number="67" hits="7" branch="False" />
+            <line number="68" hits="7" branch="False" />
+            <line number="71" hits="7" branch="False" />
+            <line number="72" hits="6" branch="False" />
+            <line number="73" hits="5" branch="False" />
+            <line number="74" hits="4" branch="False" />
+          </lines>
+        </class>
+        <class name="Payroll.Program" filename="Users/songci/Desktop/COMP2021/COMP2021-2026-2-profolio-a1952124/Week2/PracA/Task2/Payroll.cs" line-rate="0" branch-rate="1" complexity="1">
+          <methods>
+            <method name="Main" signature="()" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="104" hits="0" branch="False" />
+                <line number="105" hits="0" branch="False" />
+                <line number="106" hits="0" branch="False" />
+                <line number="109" hits="0" branch="False" />
+                <line number="111" hits="0" branch="False" />
+                <line number="114" hits="0" branch="False" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="104" hits="0" branch="False" />
+            <line number="105" hits="0" branch="False" />
+            <line number="106" hits="0" branch="False" />
+            <line number="109" hits="0" branch="False" />
+            <line number="111" hits="0" branch="False" />
+            <line number="114" hits="0" branch="False" />
+          </lines>
+        </class>
+      </classes>
+    </package>
+  </packages>
+</coverage>
