@@ -1,6 +1,6 @@
 ﻿namespace Payroll
 {
-    class Payroll
+    public class Payroll
     {
 
         private double _hours;
