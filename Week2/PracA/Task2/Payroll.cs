@@ -76,9 +76,9 @@
         //Method of CaculateNetPay
         public decimal CalculateNetPay()
         {
-             decimal grossPay = (decimal)_hours * _rate;
+             decimal grossPay = (decimal)_hours * Rate;
 
-             decimal tax = grossPay * _taxRate;
+             decimal tax = grossPay * TaxRate;
 
              decimal netPay = grossPay - tax;
 
@@ -92,14 +92,7 @@
         public void ChangeTaxRate(
             decimal newTaxRate)
         { 
-            if (newTaxRate < 0)
-            {
-                throw new ArgumentException("The newTaxRate can not be negative.");
-
-
-            }
-
-            _taxRate=newTaxRate;
+            TaxRate = newTaxRate;
             
         }
 
