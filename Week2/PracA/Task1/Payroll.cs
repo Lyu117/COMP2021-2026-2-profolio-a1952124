@@ -39,7 +39,7 @@
 
         }
 
-
+//Method of CaculateNetPay
         public decimal CalculateNetPay()
         {
              decimal grossPay = (decimal)_hours * _rate;
@@ -48,7 +48,25 @@
 
              decimal netPay = grossPay - tax;
 
-    return netPay;
+             return netPay;
+
+        }
+
+
+        //Method of change tax rate
+
+        public void ChangeTaxRate(
+            decimal newTaxRate)
+        { 
+            if (newTaxRate < 0)
+            {
+                throw new ArgumentException("The newTaxRate can not be negative.");
+
+
+            }
+
+            _taxRate=newTaxRate;
+            
         }
 
         
@@ -63,6 +81,12 @@
         static void Main()
         {
              Payroll p1 = new Payroll(40,25m,0.2m);
+             Console.WriteLine(p1.CalculateNetPay());
+
+
+            p1.ChangeTaxRate(0.25m);
+
+             Console.WriteLine(p1.CalculateNetPay());
 
 
         }
