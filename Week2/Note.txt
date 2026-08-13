@@ -1,0 +1,4 @@
+What does encapsulation achieve in C#?
+
+Why are access modifiers important?
+How would you explain method overloading to a Python programmer?

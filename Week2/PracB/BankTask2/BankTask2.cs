@@ -44,7 +44,7 @@ namespace Bank
                 throw new ArgumentException("Amount can not be negative.");
                 
             }
-            result=(decimal)Balance+amount;
+            result=Balance+amount;
             Balance=result;
             return Balance;
 
