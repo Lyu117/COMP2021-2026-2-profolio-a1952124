@@ -22,10 +22,43 @@ namespace Bank
         }
        public decimal Deposit(decimal amount)
         {
+            decimal result;
+            if (amount < 0)
+            {
+                throw new ArgumentException("Amount can not be negative.");
+                
+            }
+            result=Balance+amount;
+            Balance=result;
+            return Balance;
+
             
+        }
+        public decimal Withdraw(decimal amount)
+        {
+            if (amount > Balance)
+            {
+                throw new ArgumentException("You do not have so much money.");
+
+            }
+            decimal result;
+            result=Balance-amount;
+            Balance=result;
+            return Balance;
         }
 
         
 
+        
+
+    }
+    class Program
+    {
+        public void Main()
+        {
+            BankAccount b1 = new BankAccount("MAX",60);
+            b1.
+            
+        }
     }
 }
