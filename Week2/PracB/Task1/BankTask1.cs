@@ -54,11 +54,18 @@ namespace Bank
     }
     class Program
     {
-        public void Main()
+        public static void Main()
         {
             BankAccount b1 = new BankAccount("MAX",60);
-            b1.
+            b1.Deposit(10);
+            Console.WriteLine($"Your balance now is {b1.Balance}");
+            b1.Withdraw(5);
+            Console.WriteLine($"Your balance now is {b1.Balance}");
+            b1.Withdraw(100);
+            Console.WriteLine($"Your balance now is {b1.Balance}");
+
             
         }
+
     }
 }
