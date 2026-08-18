@@ -1,5 +1,5 @@
 ﻿namespace Bank;
-class CheckingAccount : BankAccount
+public class CheckingAccount : BankAccount
     {
         public decimal Fee{get;set;}
         public CheckingAccount(string owner,decimal balance,decimal fee) : base(owner, balance)
