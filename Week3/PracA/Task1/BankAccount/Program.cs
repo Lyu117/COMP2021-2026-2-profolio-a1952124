@@ -17,16 +17,12 @@ class Program
             Console.WriteLine($"Your balance now is {b1.Balance}");
 
 
-            SavingsAccount s1 =new SavingsAccount("Max",1000,0.035m);
+            SavingsAccount s1 =new SavingsAccount("Max",1000,0.05m);
             CheckingAccount c1=new CheckingAccount("Maaax",1200,5m);
             s1.ApplyInterest();
             Console.WriteLine($"Savings Account Balance: {s1.Balance}");
             c1.WithdrawWithFee(100);
             Console.WriteLine($"Checking Account Balance : {c1.Balance}");
-            s1.DisplayAccountInfo();
-            Console.WriteLine();
-            c1.DisplayAccountInfo();
-            
 
         }
 
