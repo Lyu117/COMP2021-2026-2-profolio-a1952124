@@ -97,17 +97,20 @@ namespace Bank
             Console.WriteLine($"Your balance now is {b1.Balance}(double)");
             b1.Deposit(10m);
             Console.WriteLine($"Your balance now is {b1.Balance}(decimal)");
-            b1.Withdraw(100);
+            b1.Withdraw(10);
             Console.WriteLine($"Your balance now is {b1.Balance}");
 
-            
+
+            SavingsAccount s1 =new SavingsAccount("Max",1000,0.05m);
+            CheckingAccount c1=new CheckingAccount("Maaax",1200,5m);
+
         }
 
     }
 
     class SavingsAccount:BankAccount
     {
-        decimal InterestRate;
+        decimal InterestRate
         public  SavingsAccount(string owner,decimal balance,decimal interestRate)
             : base(owner, balance)
         {
@@ -121,6 +124,13 @@ namespace Bank
             Balance+=interest;
             return Balance;
             
+        }
+    }
+    class CheckingAccount : BankAccount
+    {
+        public CheckingAccount(string owner,decimal balance,decimal fee) : base(owner, balance)
+        {
+            balance-=fee;
         }
     }
 }
