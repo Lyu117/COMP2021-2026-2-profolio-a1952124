@@ -103,6 +103,10 @@ namespace Bank
 
             SavingsAccount s1 =new SavingsAccount("Max",1000,0.05m);
             CheckingAccount c1=new CheckingAccount("Maaax",1200,5m);
+            s1.ApplyInterest();
+            Console.WriteLine($"Savings Account Balance: {s1.Balance}");
+            c1.WithdrawWithFee(100);
+            Console.WriteLine($"Checking Account Balance : {c1.Balance}");
 
         }
 
@@ -110,17 +114,17 @@ namespace Bank
 
     class SavingsAccount:BankAccount
     {
-        decimal InterestRate
+       public decimal InterestRate{get;private set;}
         public  SavingsAccount(string owner,decimal balance,decimal interestRate)
             : base(owner, balance)
         {
             InterestRate = interestRate;
 
         }
-        public decimal ApplyInterest(decimal interestRate)
+        public decimal ApplyInterest()
         {
             decimal interest;
-            interest=Balance*interestRate;
+            interest=Balance*InterestRate;
             Balance+=interest;
             return Balance;
             
@@ -128,9 +132,14 @@ namespace Bank
     }
     class CheckingAccount : BankAccount
     {
+        public decimal Fee{get;set;}
         public CheckingAccount(string owner,decimal balance,decimal fee) : base(owner, balance)
         {
-            balance-=fee;
+            Fee=fee;
+        }
+        public decimal WithdrawWithFee(decimal amount)
+        {
+            return base.Withdraw(amount+Fee);
         }
     }
 }
