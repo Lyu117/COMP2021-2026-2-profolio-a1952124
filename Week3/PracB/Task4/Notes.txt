@@ -1,0 +1,2 @@
+Polymorphism allows FullTimeEmployee and Contractor objects to be stored and treated as Employee objects.
+When CalculatePay() is called, each object use it's own overidden method, so they can produce different results.
