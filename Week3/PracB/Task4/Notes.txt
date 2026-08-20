@@ -1,2 +1,8 @@
 Polymorphism allows FullTimeEmployee and Contractor objects to be stored and treated as Employee objects.
 When CalculatePay() is called, each object use it's own overidden method, so they can produce different results.
+
+
+
+*Polymorphism lets us use one parent class type for different child class objects. Different child classes can have different versions of the same method.
+*Inheritance lets a child class get properties and methods from a parent class. Polymorphism lets the program choose the correct method when it runs.
+*It's similar with C++ , I remember also use vitual,abstruct and override.
