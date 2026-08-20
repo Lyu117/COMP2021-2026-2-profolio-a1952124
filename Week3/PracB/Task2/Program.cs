@@ -5,15 +5,16 @@ class Programs{
 public static void Main(){
 List<Employee> employees =new List<Employee>();
 
-employees.Add(new FullTimeEmployee("Bob", 6250m));
-employees.Add(new Contractor("Fred", 25m, 100m));
+employees.Add(new FullTimeEmployee("Bill", 5000m));
+employees.Add(new Contractor("Fred", 20m, 100m));
 
 foreach (Employee employee in employees)
 {
+    
     decimal netPay = employee.CalculatePay();
-    decimal tax = netPay / (1 - Employee.TaxRate) * Employee.TaxRate;
-
-    Console.WriteLine($"{employee.Name}: Pay ${netPay}. Tax ${tax}.");
+    decimal pay = netPay / (1 - Employee.TaxRate);
+    decimal tax = pay * Employee.TaxRate;
+    Console.WriteLine($"{employee.Name}: Pay ${pay}. Tax ${tax}.");
 }
 }
 }
