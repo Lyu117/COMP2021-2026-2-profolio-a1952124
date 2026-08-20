@@ -13,10 +13,11 @@ abstract public class Employee
         Name=name;
     }
     public const decimal TaxRate=0.2m;
+    public abstract decimal CalculatePay();
     
 }
 
-public class FullTimeEmployee : Employee, IReportable
+public  class FullTimeEmployee : Employee, IReportable
 {
     
     public decimal AnnualSalary{get;set;}
@@ -25,7 +26,7 @@ public class FullTimeEmployee : Employee, IReportable
        AnnualSalary=annualSalary;
     }
 
-    public decimal CalculatePay()
+    public override decimal CalculatePay()
     {
         Tax=AnnualSalary*TaxRate;
         
@@ -33,12 +34,12 @@ public class FullTimeEmployee : Employee, IReportable
     }
     public string GenerateReport()
     {
-        return $"Name:{Name}, AnnualSalary:{AnnualSalary}, PayTax:{CalculatePay()}";
+        return $"Name:{Name}, AnnualSalary:{AnnualSalary}, Pay:{CalculatePay()}";
     }
 
 }
 
-public class Contractor : Employee,IReportable
+public  class Contractor : Employee,IReportable
 {
     public decimal Rate{get;set;}
     public decimal Hours{get;set;}
@@ -48,13 +49,29 @@ public class Contractor : Employee,IReportable
         Rate=rate;
         Hours=hours;
     }
-    public decimal CalculatePay()
+    public override decimal CalculatePay()
+
     {
+        Tax=(Rate*Hours)*TaxRate;
+
         decimal result=(Rate * Hours)-Tax;
         return result;
     }
-    public string IReportable()
+    public string GenerateReport()
     {
         return $"Name:{Name}, Hours:{Hours}, Rate:{Rate}, Pay:{CalculatePay()}";
+    }
+}
+
+public class Programs
+{
+    public static void Main()
+    {
+        FullTimeEmployee f1=new FullTimeEmployee("Max",20000m);
+        Contractor c1 =new Contractor("Jacky",50m,100m);
+         Console.WriteLine(f1.GenerateReport());
+          Console.WriteLine(f1.CalculatePay());
+           Console.WriteLine(c1.CalculatePay());
+            Console.WriteLine(c1.GenerateReport());
     }
 }
