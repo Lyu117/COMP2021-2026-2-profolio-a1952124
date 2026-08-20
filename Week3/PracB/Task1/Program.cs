@@ -7,6 +7,7 @@ interface IReportable
 abstract public class Employee
 {
     public string Name{get;set;}
+    public decimal Tax;
     public Employee(string name)
     {
         Name=name;
@@ -17,6 +18,7 @@ abstract public class Employee
 
 public class FullTimeEmployee : Employee, IReportable
 {
+    
     public decimal AnnualSalary{get;set;}
     public FullTimeEmployee(string name,decimal annualSalary) : base(name)
     {
@@ -25,7 +27,7 @@ public class FullTimeEmployee : Employee, IReportable
 
     public decimal CalculatePay()
     {
-        decimal Tax=AnnualSalary*TaxRate;
+        Tax=AnnualSalary*TaxRate;
         
         return AnnualSalary-Tax;
     }
@@ -36,7 +38,7 @@ public class FullTimeEmployee : Employee, IReportable
 
 }
 
-public class Contractor : Employee
+public class Contractor : Employee,IReportable
 {
     public decimal Rate{get;set;}
     public decimal Hours{get;set;}
@@ -45,5 +47,14 @@ public class Contractor : Employee
     {
         Rate=rate;
         Hours=hours;
+    }
+    public decimal CalculatePay()
+    {
+        decimal result=(Rate * Hours)-Tax;
+        return result;
+    }
+    public string IReportable()
+    {
+        return $"Name:{Name}, Hours:{Hours}, Rate:{Rate}, Pay:{CalculatePay()}";
     }
 }
