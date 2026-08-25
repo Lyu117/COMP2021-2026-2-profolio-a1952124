@@ -21,11 +21,11 @@ public static class BrokenProgram
 
     for (int i = 0; i < input.Split("\n").Length; i += 2)
     {
-      items.Add(int.Parse(input.Substring((i * 4) + 1, 3)));
+      items.Add(int.Parse(input.Split("\n")[i]));
 
       if (i != 0)
       {
-        
+        symbols.Add(input.Split("\n")[i - 1].Trim());
       }
     }
 
