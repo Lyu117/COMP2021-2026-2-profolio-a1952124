@@ -1,0 +1,15 @@
+The incorrect value in the items list was 3. The original code used fixed positions to read numbers from the input. The spacing around 3 was different, so it was read incorrectly. The other numbers were still correct because their positions matched the code better.
+
+
+When the program iterated through the symbols list, it sometimes read the wrong line. The input had spaces and line breaks, so the symbols were not always read as exactly "+" or "*". I fixed this by splitting the input into lines and using the correct index.
+
+
+
+The debugger helped me check the code step by step and find where the values became wrong.
+
+
+I removed the unused args, changed Split("\n") to Split('\n'), and added CultureInfo.InvariantCulture. This made the code cleaner and safer.
+
+
+
+I did not fix some warnings like CA1303 because this is only a small practice program and it does not need multi-language support.
