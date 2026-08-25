@@ -19,14 +19,13 @@ public static class BrokenProgram
     List<int> items = [];
     List<string> symbols = [];
 
-    for (int i = 0; i < input.Split("\n").Length; i += 2)// input.Split（"\n") 把input按换行切开 
-                                                         // 切开后一共有多少行就是input.Split("\n").Length
+    for (int i = 0; i < input.Split("\n").Length; i += 2)
     {
       items.Add(int.Parse(input.Substring((i * 4) + 1, 3)));
 
       if (i != 0)
       {
-        symbols.Add(input.Split("\n")[i - 1]);
+        
       }
     }
 
