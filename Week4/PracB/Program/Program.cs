@@ -1,139 +1,141 @@
-﻿namespace AdventDay7;
-
-using System.IO.Pipelines;
-using System.Text;
-/// <summary>
-/// Class <c>Program</c> contains the magical tachyon manifold.
-/// </summary>
-public static class Program
+﻿using System.Text;
+namespace Task
 {
 
-    //This is a singleline comment.
-   
-    public static string FileToRead { get; set; } = "/Users/songci/Desktop/COMP2021/COMP2021-2026-2-profolio-a1952124/Week4/PracB/Program/Example.txt";
 
     /// <summary>
-    /// This method processes the start of the tachyon manifold
-    /// <example>
-    /// For example:
-    /// <code>
-    /// ProcessStart(0, 0, taychonGrid);
-    /// </code>
-    /// results in <c>'|'</c>being added to the grid point (0,1)
-    /// </example>
+    /// Class <c>Program</c> contains the magical tachyon manifold.
     /// </summary>
-    /// <param name="posX">It's the horizontal position</param>
-    /// <param name="posY">It's the vertical position</param>
-    /// <param name="tachyonGrid">The grid that stores the tachyon manifold</param>
-    public static void processStart(int posX, int posY, List<string> tachyonGrid)
+    public static class Program
     {
-        string line = tachyonGrid[posY + 1];
-        StringBuilder sb = new StringBuilder(line);
-        sb[posX] = '|';
-        line = sb.ToString();
-        tachyonGrid[posY + 1] = line;
-    }
 
-    /*
-    This is a multiline comment
-    TODO: ProcessSplitter should return an int to add to the total, but it currently returns nothing.
-    */
+        //This is a singleline comment.
 
-    /// <summary>
-    /// This method processes the splitter in the tachyon manifold
-    /// <example>
-    /// For example:
-    /// <code>
-    /// processSplitter(2, 2, tachyonGrid);
-    /// </code>
-    /// results in the beam being split to the left and right
-    /// </example>
-    /// </summary>
-    /// <param name="posX">It's the horizontal position</param>
-    /// <param name="posY">It's the vertical position</param>
-    /// <param name="tachyonGrid">The grid that stores the tachyon manifold.</param>
-    public static void processSplitter(int posX, int posY, List<string> tachyonGrid)
-    {
-        string line = tachyonGrid[posY];
-        StringBuilder sb = new StringBuilder(line);
-        if (tachyonGrid[posY - 1][posX] == '|')
+        public static string FileToRead { get; set; } = "/Users/songci/Desktop/COMP2021/COMP2021-2026-2-profolio-a1952124/Week4/PracB/Program/Example.txt";
+
+        /// <summary>
+        /// This method processes the start of the tachyon manifold
+        /// <example>
+        /// For example:
+        /// <code>
+        /// ProcessStart(0, 0, taychonGrid);
+        /// </code>
+        /// results in <c>'|'</c>being added to the grid point (0,1)
+        /// </example>
+        /// </summary>
+        /// <param name="posX">It's the horizontal position</param>
+        /// <param name="posY">It's the vertical position</param>
+        /// <param name="tachyonGrid">The grid that stores the tachyon manifold</param>
+        public static void ProcessStart(int posX, int posY, List<string> tachyonGrid)
         {
-            sb[posX - 1] = '|';
-            sb[posX + 1] = '|';
-            line = sb.ToString();
-            tachyonGrid[posY] = line;
-        }
-    }
-    /// <summary>
-    /// The method processes an empty position in the tachyon manifold
-    /// <example>
-    /// For example:
-    /// <code>
-    /// processEmpty(2, 2, tachyonGrid);
-    /// </code>
-    /// results in <c>'|'</c> being added to the empty position if there is a beam above it
-    /// </example>
-    /// </summary>
-    /// <param name="posX">It's the horizontal position</param>
-    /// <param name="posY">It's the vertical position</param>
-    /// <param name="tachyonGrid">The grid that stores the tachyon manifold.</param>
-    public static void processEmpty(int posX, int posY, List<string> tachyonGrid)
-    {
-        string line = tachyonGrid[posY];
-        StringBuilder sb = new StringBuilder(line);
-        if (tachyonGrid[posY - 1][posX] == '|')
-        {
+            string line = tachyonGrid[posY + 1];
+            StringBuilder sb = new(line);
             sb[posX] = '|';
             line = sb.ToString();
-            tachyonGrid[posY] = line;
+            tachyonGrid[posY + 1] = line;
         }
-    }
 
-    public static void Main(string[] args)
-    {
-      
-        var sr = new StreamReader(FileToRead);
-        string srText = sr.ReadToEnd();
-        int totalCount = 0;
+        /*
+        This is a multiline comment
+        TODO: ProcessSplitter should return an int to add to the total, but it currently returns nothing.
+        */
 
-        List<string> symbols = [.. srText.Split("\n")];
-        List<string> tachyonGrid = symbols[..^1];
-
-        Console.WriteLine("Begin Tachyon Manifold start state");
-        foreach (var item in tachyonGrid)
+        /// <summary>
+        /// This method processes the splitter in the tachyon manifold
+        /// <example>
+        /// For example:
+        /// <code>
+        /// processSplitter(2, 2, tachyonGrid);
+        /// </code>
+        /// results in the beam being split to the left and right
+        /// </example>
+        /// </summary>
+        /// <param name="posX">It's the horizontal position</param>
+        /// <param name="posY">It's the vertical position</param>
+        /// <param name="tachyonGrid">The grid that stores the tachyon manifold.</param>
+        public static void ProcessSplitter(int posX, int posY, List<string> tachyonGrid)
         {
-            Console.WriteLine(item);
-        }
-        Console.WriteLine("End Tachyon Manifold start state");
-
-        for (int posY = 0; posY < tachyonGrid.Count; posY++)
-        {
-            var item = tachyonGrid[posY];
-            foreach (var (posX, character) in item.Index())
+            string line = tachyonGrid[posY];
+            StringBuilder sb = new(line);
+            if (tachyonGrid[posY - 1][posX] == '|')
             {
-                if (character == 'S')
-                {
-                    processStart(posX, posY, tachyonGrid);
-                }
-                else if (character == '^')
-                {
-                    processSplitter(posX, posY, tachyonGrid);
-                }
-                else if (posY != 0)
-                {
-                    processEmpty(posX, posY, tachyonGrid);
-                }
+                sb[posX - 1] = '|';
+                sb[posX + 1] = '|';
+                line = sb.ToString();
+                tachyonGrid[posY] = line;
             }
         }
-        Console.WriteLine($"Begin Taychon Manifold end state");
-
-        foreach (var item in tachyonGrid)
+        /// <summary>
+        /// The method processes an empty position in the tachyon manifold
+        /// <example>
+        /// For example:
+        /// <code>
+        /// processEmpty(2, 2, tachyonGrid);
+        /// </code>
+        /// results in <c>'|'</c> being added to the empty position if there is a beam above it
+        /// </example>
+        /// </summary>
+        /// <param name="posX">It's the horizontal position</param>
+        /// <param name="posY">It's the vertical position</param>
+        /// <param name="tachyonGrid">The grid that stores the tachyon manifold.</param>
+        public static void ProcessEmpty(int posX, int posY, List<string> tachyonGrid)
         {
-            Console.WriteLine(item);
+            string line = tachyonGrid[posY];
+            StringBuilder sb = new(line);
+            if (tachyonGrid[posY - 1][posX] == '|')
+            {
+                sb[posX] = '|';
+                line = sb.ToString();
+                tachyonGrid[posY] = line;
+            }
         }
-        Console.WriteLine($"End Taychon Manifold end state");
-        Console.WriteLine($"Total Tachyon Manifold splits were: {totalCount}");
-        Console.WriteLine($"If using Example.txt, your total should be 21");
-        Console.WriteLine($"If using Example.txt, your total is {(totalCount == 21 ? "RIGHT": "WRONG")}");
+
+        public static void Main()
+        {
+
+            StreamReader sr = new(FileToRead);
+            string srText = sr.ReadToEnd();
+            int totalCount = 0;
+
+            List<string> symbols = [.. srText.Split("\n")];
+            List<string> tachyonGrid = symbols[..^1];
+
+            Console.WriteLine("Begin Tachyon Manifold start state");
+            foreach (string item in tachyonGrid)
+            {
+                Console.WriteLine(item);
+            }
+            Console.WriteLine("End Tachyon Manifold start state");
+
+            for (int posY = 0; posY < tachyonGrid.Count; posY++)
+            {
+                string item = tachyonGrid[posY];
+                foreach ((int posX, char character) in item.Index())
+                {
+                    if (character == 'S')
+                    {
+                        ProcessStart(posX, posY, tachyonGrid);
+                    }
+                    else if (character == '^')
+                    {
+                        ProcessSplitter(posX, posY, tachyonGrid);
+                    }
+                    else if (posY != 0)
+                    {
+                        ProcessEmpty(posX, posY, tachyonGrid);
+                    }
+                }
+            }
+            Console.WriteLine($"Begin Taychon Manifold end state");
+
+            foreach (string item in tachyonGrid)
+            {
+                Console.WriteLine(item);
+            }
+            Console.WriteLine($"End Taychon Manifold end state");
+            Console.WriteLine($"Total Tachyon Manifold splits were: {totalCount}");
+            Console.WriteLine($"If using Example.txt, your total should be 21");
+            Console.WriteLine($"If using Example.txt, your total is {(totalCount == 21 ? "RIGHT" : "WRONG")}");
+        }
     }
 }
