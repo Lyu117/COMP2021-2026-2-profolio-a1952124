@@ -38,6 +38,20 @@ public static class Program
     This is a multiline comment
     TODO: ProcessSplitter should return an int to add to the total, but it currently returns nothing.
     */
+
+    /// <summary>
+    /// This method processes the splitter in the tachyon manifold
+    /// <example>
+    /// For example:
+    /// <code>
+    /// processSplitter(2, 2, tachyonGrid);
+    /// </code>
+    /// results in the beam being split to the left and right
+    /// </example>
+    /// </summary>
+    /// <param name="posX">It's the horizontal position</param>
+    /// <param name="posY">It's the vertical position</param>
+    /// <param name="tachyonGrid">The grid that stores the tachyon manifold.</param>
     public static void processSplitter(int posX, int posY, List<string> tachyonGrid)
     {
         string line = tachyonGrid[posY];
@@ -50,13 +64,19 @@ public static class Program
             tachyonGrid[posY] = line;
         }
     }
-
     /// <summary>
-    /// 
+    /// The method processes an empty position in the tachyon manifold
+    /// <example>
+    /// For example:
+    /// <code>
+    /// processEmpty(2, 2, tachyonGrid);
+    /// </code>
+    /// results in <c>'|'</c> being added to the empty position if there is a beam above it
+    /// </example>
     /// </summary>
-    /// <param name="posX"></param>
-    /// <param name="posY"></param>
-    /// <param name="tachyonGrid"></param>
+    /// <param name="posX">It's the horizontal position</param>
+    /// <param name="posY">It's the vertical position</param>
+    /// <param name="tachyonGrid">The grid that stores the tachyon manifold.</param>
     public static void processEmpty(int posX, int posY, List<string> tachyonGrid)
     {
         string line = tachyonGrid[posY];
