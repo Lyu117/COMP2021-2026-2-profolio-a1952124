@@ -9,8 +9,8 @@ public static class Program
 {
 
     //This is a singleline comment.
-    //TODO: Change hardcoded string for the input file to one on your PC.
-    public static string FileToRead { get; set; } = "/home/MarkTheMenace/workspace/portfolio/Topic4B/Example.txt";
+   
+    public static string FileToRead { get; set; } = "/Users/songci/Desktop/COMP2021/COMP2021-2026-2-profolio-a1952124/Week4/PracB/Program/Example.txt";
 
     /// <summary>
     /// This method processes the start of the tachyon manifold
@@ -22,9 +22,9 @@ public static class Program
     /// results in <c>'|'</c>being added to the grid point (0,1)
     /// </example>
     /// </summary>
-    /// <param name="posX"></param>
-    /// <param name="posY"></param>
-    /// <param name="tachyonGrid"></param>
+    /// <param name="posX">It's the horizontal position</param>
+    /// <param name="posY">It's the vertical position</param>
+    /// <param name="tachyonGrid">The grid that stores the tachyon manifold</param>
     public static void processStart(int posX, int posY, List<string> tachyonGrid)
     {
         string line = tachyonGrid[posY + 1];

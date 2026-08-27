@@ -1,0 +1,16 @@
+*Task1 1.   symbols contains all the lines read from the file.
+tachyonGrid contains all the lines except the last line.
+[..^1] means taking everything from first element to the end except the last item(not include)
+
+*Task1 2. posX is index, so each loop increase one
+character is the character at that position.
+Item.index() can get the position(posX)and character at the same time
+Normal foreach can just get one parament once.
+
+
+*Task1 3.processSplitter processes the empty square from both splitters.
+ I think this is okay because both splitters can reach the same square, and the program can still continue correctly.
+
+
+
+*Task1 4.It can output correct the path of beam but totalCount is incorrect,currently the method processessplitter return void ,so it can't return value to totalCount
