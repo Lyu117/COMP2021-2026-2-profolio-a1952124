@@ -7,7 +7,7 @@ namespace ListPrac
     {
         static void Main()
         {
-            List<string> names=new List<string>;
+            List<string> names=new List<string>();
             names.Add("Emily");
             names.Add("Nathan");
             names.Add("Ryan");
@@ -66,7 +66,7 @@ namespace ListPrac
 
             names.AddRange(ConvertArray);
 
-            
+
 
 
 

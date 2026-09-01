@@ -1,2 +1,6 @@
 Task1: I used Array.Sort() to sort the string array. It sorts the names in alphabetical order.
 
+Task3: 
+Syntax differences：An Array has a fixed size,A List can change its size,A List can use methods like Add(), Remove() and Insert().
+Performance and flexibility :Lists are more flexible because we can add or remove items.Array use less memory and can not add extra items.
+When to use each:I would use an Array when I know the number of items will not change.I would use a List when I need to add or remove items while the program is running.
