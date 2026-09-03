@@ -1,0 +1,10 @@
+***1. How is the structure of a LinkedList<T> different from List<T>?
+Answer: LinkedList<T> stores elements in nodes, and each node has references to the 
+previous and next nodes.List<T> stored elements in indexed position.
+
+***2. Describe why you can't initialize a LinkedList<string> using standard List syntax: LinkedList<string> stringLinkedList = ["Why", "isn't", "it", "possible!!"];
+Answer:A LinkedList<T> stores data in linked nodes, not index positions. We add elements using methods such as AddFirst() and AddLast().
+
+
+***3. why can't you just access nodes directly using e.g.LinkedList[3]?
+A LinkedList<T> does not use or store indexes. To find a node, we need to start from the first or last node and move through the list using Next or Previous.
