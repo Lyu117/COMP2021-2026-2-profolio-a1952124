@@ -1,3 +1,5 @@
+Task1:
+
 ***1. How is the structure of a LinkedList<T> different from List<T>?
 Answer: LinkedList<T> stores elements in nodes, and each node has references to the 
 previous and next nodes.List<T> stored elements in indexed position.
@@ -7,4 +9,9 @@ Answer:A LinkedList<T> stores data in linked nodes, not index positions. We add 
 
 
 ***3. why can't you just access nodes directly using e.g.LinkedList[3]?
-A LinkedList<T> does not use or store indexes. To find a node, we need to start from the first or last node and move through the list using Next or Previous.
+Answer: A LinkedList<T> does not use or store indexes. To find a node, we need to start from the first or last node and move through the list using Next or Previous.
+
+
+Task2:
+***1. Make a change to your "fred" person after calling the ToLinkedList method, did the changes to fred propagate to the List and LinkedList? Why or why not?
+Answer：Yes, it will changes to fred propagate to the List and LinkedList,because List and LinkedList is stored the references of them rather than stored the copy value.

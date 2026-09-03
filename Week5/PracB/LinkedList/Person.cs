@@ -63,8 +63,16 @@ public class Progress
         people.Add(sam);
         people.Add(emma);
 
+        
         LinkedList<Person> linkedPeople = ToLinkedList(people);
+
+        Console.WriteLine("Before sorting:");
         Console.WriteLine(PrintPeople(linkedPeople));
+
+        LinkedList<Person> sortedPeople = SortPeople(linkedPeople);
+
+        Console. WriteLine("After sorting:");
+        Console.WriteLine(PrintPeople(sortedPeople));
     }
 
     public static LinkedList<Person> ToLinkedList(List<Person> people)
@@ -78,7 +86,6 @@ public class Progress
 
         return peopleList;
     }
-
     public static string PrintPeople(LinkedList<Person> people)
     {
         string result = "";
@@ -89,7 +96,6 @@ public class Progress
 
         return result;
     }
-
     public static LinkedList<Person> SortPeople( LinkedList<Person> people)
     {
         bool swapped;
@@ -97,7 +103,6 @@ public class Progress
         {
             swapped=false;
             LinkedListNode<Person>? current= people.First;
-
             while (current!.Next != null)
             {
                 if(current.Value.Age> current.Next.Value.Age)
@@ -110,12 +115,9 @@ public class Progress
                 }
                 current=current.Next;
             }
-
         }
         while(swapped);
-
         return people;
-
     }
     
 }
