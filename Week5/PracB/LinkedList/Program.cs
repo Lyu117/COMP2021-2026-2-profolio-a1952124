@@ -6,7 +6,7 @@ namespace LinkedListPrac
 {
     class Progress
     {
-        static void Main()
+        static void Main1()
         {
             var numbers= new LinkedList<int>();
             numbers.AddFirst(70);
