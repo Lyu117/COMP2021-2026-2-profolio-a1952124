@@ -1,0 +1,14 @@
+Task1:
+1.What type is your List.OrderBy(x => x)? (Before you convert to back to a list)
+Answer: It returns an IOrderedEnumerable<string>
+2.Why does .OrderBy() return the ordered results, instead of sorting them in place like .Sort()?
+Answer:It returns a new ordered result and does not change the original collection. .Sort() will changes the original List directly.
+3.Explain the purpose of x => x in List.OrderBy(x => x).
+Answer:Use the item self to sorting.
+4.What does x mean? Can I use any name? Why doesn't x have a type?
+Answer:The type is inferred automatically by Csharp, I can change x name for any, x means each item in the collection.
+
+
+Task2:
+1.Did the syntax need to change between your Stack and Queue select? Why or why not?
+Answer: No, the syntax did not need to change. Because Stack<T> and Queue<T> all can use LINQ methods such as .Select() and .OrderBy().

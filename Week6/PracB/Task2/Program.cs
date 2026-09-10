@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Security.Cryptography.X509Certificates;
 
 namespace Task2;
 public class BankAccount(string owner, decimal balance)
@@ -75,39 +76,40 @@ class Progress
         account.Push(a8);
         account.Push(a9);
         account.Push(a10);
-        System.Console.WriteLine("The Stack<BankAccount> is ");
-        System.Console.WriteLine();
-
-        foreach(BankAccount account1 in account)
-        {
-            System.Console.WriteLine(account1);
-        }
-        Queue<BankAccount> accountQueue = StackToQueue(account);
-
-
-
-
-
-    }
-    public static Queue<BankAccount> StackToQueue(Stack<BankAccount>account)
-    {
-        Queue<BankAccount>accountQueue=new Queue<BankAccount>();
-        foreach(BankAccount account1 in account)
-        {
-            accountQueue.Enqueue(account1);
-        }
-        System.Console.WriteLine();
-
-        System.Console.WriteLine("AccountQueue is ");
-        System.Console.WriteLine();
-
-        foreach (BankAccount account2 in accountQueue)
-        {
-            System.Console.WriteLine(account2);
-        }
-        System.Console.WriteLine();
       
-        return accountQueue;
+         
+         var stackResult= account.Select(x=>x.Owner).OrderBy(x=>x);
+         System.Console.WriteLine("Stack Owner");
+         foreach(string a in stackResult)
+        {
+            System.Console.WriteLine(a);
+        }
+        System.Console.WriteLine();
+
+        Queue<BankAccount> accountQueue = StackToQueue(account);
+        var queueResult=accountQueue.Select(x=>x.Owner).OrderBy(x=>x);
+        System.Console.WriteLine("Queue Owner");
+        foreach(string b in queueResult)
+        {
+            System.Console.WriteLine(b);
+        }
+
+
+
+
+
+
 
     }
+    public static Queue<BankAccount> StackToQueue(Stack<BankAccount> account)
+  {
+    Queue<BankAccount> accountQueue = new Queue<BankAccount>();
+
+    foreach (BankAccount account1 in account)
+    {
+        accountQueue.Enqueue(account1);
+    }
+
+    return accountQueue;
+  }
 }
