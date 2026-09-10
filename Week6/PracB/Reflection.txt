@@ -12,3 +12,11 @@ Answer:The type is inferred automatically by Csharp, I can change x name for any
 Task2:
 1.Did the syntax need to change between your Stack and Queue select? Why or why not?
 Answer: No, the syntax did not need to change. Because Stack<T> and Queue<T> all can use LINQ methods such as .Select() and .OrderBy().
+
+Task3:
+1.Compared to the stack sorting algorithm in the previous prac which did you prefer and why?
+Answer:LINQ is better because it's short and easy to use.
+2.Did you find the LINQ syntax unusual? Or was it intuitive?  
+Answer：It's intutive and easy to understand.
+3.Did the syntax need to change between your Stack and Queue select? Why or why not?
+Answer:No, the syntax did not need to change.Both of them is collection.
