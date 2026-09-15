@@ -1,0 +1,8 @@
+1.Did you need to run .Sort() or similiar on your SortedSet to maintain its ordering? Why or why not?
+No,it can automaticlly sort order when items are added.
+
+2.What is the underlying data structure used by SortedSet? How did you find out?
+Balanced binary search tree/Red-Black tree, I found them from Microsoft documentation.
+
+3.What happened when you tried to add the duplicate score to the set? Why does SortedSet behave this way?
+The duplicate score was not added. SortedSet only stores the unique values, so duplicate values are ignored automaticlly.

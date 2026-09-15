@@ -106,6 +106,30 @@ public class BankComparer : IComparer<BankAccount>
         accounts.Add(a10);
         SortPrac.DisplayAccounts(accounts);
 
+        double[] balances = new double[accounts.Count];
+
+        int i = 0;
+
+        foreach (BankAccount account in accounts)
+        {
+            balances[i] = (double)account.Balance;
+            i++;
+        }
+
+        ScottPlot.Plot myPlot = new();
+
+        myPlot.Add.Bars(balances);
+
+        myPlot.YLabel("Account Balance");
+        myPlot.XLabel("Ranking");
+
+        myPlot.Axes.Left.Label.FontSize = 20;
+        myPlot.Axes.Bottom.Label.FontSize = 20;
+
+        myPlot.Axes.Margins(bottom: 0, top: .2);
+
+        myPlot.SavePng("Topic7A-Task3.png", 800, 600);
+
 
         
     }
