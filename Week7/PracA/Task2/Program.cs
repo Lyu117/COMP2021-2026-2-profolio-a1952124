@@ -47,9 +47,38 @@ public class BankAccount(string owner, decimal balance)
       """;
     return info;
   }
+
+
 }
 
-class Progress{
+public class BankComparer : IComparer<BankAccount>
+{
+    public int Compare(BankAccount x, BankAccount y)
+    {
+        int balanceCompare = x.Balance.CompareTo(y.Balance);
+        if (balanceCompare != 0)
+        {
+            return balanceCompare;
+        }
+        int ownerCompare = x.Owner.CompareTo(y.Owner);
+        return ownerCompare;
+    }
+}
+   class SortPrac
+{
+    public static void DisplayAccounts(SortedSet<BankAccount> accounts)
+    {
+        Console.WriteLine("SortedSet is:");
+
+        foreach (BankAccount account in accounts)
+        {
+            Console.WriteLine(account);
+        }
+    }
+}
+
+
+   class Progress{
 
     static void Main()
     {
@@ -64,9 +93,18 @@ class Progress{
         BankAccount a9 = new BankAccount("Carlos Sainz",100002000);
         BankAccount a10 = new BankAccount("Guanyu Zhou", 80000);
 
-        SortedSet<BankAccount>accounts=new SortedSet<BankAccount>();
+        SortedSet<BankAccount>accounts=new SortedSet<BankAccount>(new BankComparer());
         accounts.Add(a1);
         accounts.Add(a2);
+        accounts.Add(a3);
+        accounts.Add(a4);
+        accounts.Add(a5);
+        accounts.Add(a6);
+        accounts.Add(a7);
+        accounts.Add(a8);
+        accounts.Add(a9);
+        accounts.Add(a10);
+        SortPrac.DisplayAccounts(accounts);
 
 
         
