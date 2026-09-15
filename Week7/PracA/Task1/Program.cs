@@ -2,13 +2,16 @@
 {
     class SortPrac
     {
-        void DisplayScores(SortedSet<int> scores)
+        public static void DisplayScores(SortedSet<int> scores)
         {
             System.Console.WriteLine("SortedSet is ");
             foreach(int score in scores)
             {
                 System.Console.WriteLine(score);
             }
+            
+            Console.WriteLine($"Lowest score: {scores.Min}");
+            Console.WriteLine($"Highest score: {scores.Max}");
         }
     }
 
@@ -26,8 +29,20 @@
             scores.Add(45);
             scores.Add(99);
             scores.Add(100);
-            scores.Add(6);
-            scores.Add(42);
+            scores.Add(10);
+            scores.Add(120);
+            
+            SortPrac.DisplayScores(scores);
+
+            scores.Add(150);
+            
+            SortPrac.DisplayScores(scores);
+
+            scores.Add(120);
+            SortPrac.DisplayScores(scores);
+
+
+
         }
     }
 }
