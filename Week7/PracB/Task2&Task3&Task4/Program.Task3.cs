@@ -3,7 +3,7 @@ namespace PriorityQueuePrac
 {
     class Program1
     {
-        public static void Main1()
+        public static void Task3()
         {
 
             Player tom = new Player("Tom");

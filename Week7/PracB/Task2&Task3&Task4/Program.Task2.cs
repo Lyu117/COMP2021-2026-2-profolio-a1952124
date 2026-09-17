@@ -4,7 +4,7 @@ namespace SortedDictionaryPrac2
     {
         public static void Main()
         {
-         
+        
             Player p1 = new Player("Tom");
             Player p2 = new Player("Bob");
             Player p3 = new Player("Brian");
@@ -119,6 +119,14 @@ namespace SortedDictionaryPrac2
             Console.WriteLine(
                 "The same Tom Player object was added with a different score."
             );
+
+
+            System.Console.WriteLine("Task3-----------");
+            PriorityQueuePrac.Program1.Task3();
+            System.Console.WriteLine(("Task4—----------"));
+            PriorityQueuePrac.Program2.Task4();
         }
+
     }
+    
 }
