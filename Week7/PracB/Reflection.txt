@@ -1,0 +1,44 @@
+Task 1
+
+1. What is the data structure backing the SortedDictionary? How did you find out?
+
+SortedDictionary uses a self-balancing binary search tree. I found this from the .NET documentation.
+
+2. What happened when you tried to add a duplicate score? Why?
+
+It gave an ArgumentException because the score is the key, and keys in a SortedDictionary must be unique.
+
+3. Contrast SortedSet and SortedDictionary. Provide an example of when each might be useful.
+
+SortedSet stores unique values in sorted order.
+SortedDictionary stores key-value pairs and sorts them by key.
+
+SortedSet can be used for unique scores.
+SortedDictionary can be used for storing scores with player names.
+
+
+Task 3 
+
+1. What data structure backs a PriorityQueue? How did you find out?
+
+PriorityQueue uses a heap. I found this from the .NET documentation.
+
+2. What happens when you Enqueue two different players with the same priority?
+
+Both players can be added. PriorityQueue allows the same priority for different players.
+
+3. Why does a PriorityQueue permit duplicates when a SortedSet does not?
+
+PriorityQueue is used to order items by priority, so duplicate priorities are allowed.
+SortedSet only stores unique values.
+
+
+Task 4 Reflection
+
+1. Why wasn't IComparer or IComparable required for the Priority enum?
+
+An enum has integer values, so .NET can compare them automatically.
+
+2. If we used a struct with int Priority, would we need IComparer or IComparable? Why?
+
+Yes.
