@@ -15,13 +15,20 @@ namespace SortedDictionaryPrac
             SortedScores.Add(100,"Jack");
             SortedScores.Add(99,"Jacky");
             SortedScores.Add(35,"Lucy");
-            SortedScores.Add(55,"Luica");
+            SortedScores.Add(55,"Lucia");
             SortedScores.Add(88,"Kris");
 
             System.Console.WriteLine("The top three scores are: ");
-            System.Console.WriteLine(SortedScores.Reverse().Take(3));
+            foreach (var pair in SortedScores.Reverse().Take(3))
+                {
+                    Console.WriteLine($"{pair.Value}: {pair.Key}");
+                }
+
             System.Console.WriteLine("The bottom three scores are: ");
-            System.Console.WriteLine(SortedScores.Take(3));
+            foreach (var pair in SortedScores.Take(3))
+                {
+                    Console.WriteLine($"{pair.Value}: {pair.Key}");
+                }
             System.Console.WriteLine("Lucia has left game");
 
             int? playerToRemove= null;
@@ -34,7 +41,19 @@ namespace SortedDictionaryPrac
                     break;
                 }
             }
-           
+            if (playerToRemove != null)
+            {
+                SortedScores.Remove(playerToRemove.Value);
+            }
+            System.Console.WriteLine("Remaining players: ");
+            foreach(var pair in SortedScores)
+            {
+                System.Console.WriteLine($"{pair.Value}:{pair.Key}");
+            }    
+            SortedScores.Add(5,"Jack");   
+
+            SortedScores.Add(90,"David");
+                
           
 
 
