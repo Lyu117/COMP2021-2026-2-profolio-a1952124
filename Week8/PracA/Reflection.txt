@@ -10,3 +10,18 @@ Answer:Yes, I was able to use LINQ methods. I used Cast<DictionaryEntry>() to co
 Task2
 1.Which approach was faster? Append or Build? Why?
 Answer: Build is more faster.Because the Append method makes a new string every time. StringBuilder does not need to do this, so it is faster.
+
+
+
+Task3
+
+Task3
+
+1. What is the Big-O notation complexity of the Append method?
+Answer: The Append method is O(n²).
+2. How does your evidence support this conclusion?
+Answer: The graph shows that the running time increases faster as the number of loops increases. The curve becomes steeper.
+3. What is the Big-O notation complexity of the Builder method?
+Answer: The Builder method is O(n).
+4. How does your evidence support this conclusion?
+Answer: The graph shows that the running time increases almost linearly as the number of loops increases.
