@@ -36,12 +36,12 @@ namespace HashTablePrac
 
         var sortedScores = scoreHash.Cast<DictionaryEntry>()
             .Where(entry => entry.Key is Player)
-            .OrderByDescending(entry => (int)entry.Value);
+            .OrderByDescending(entry => (int?)entry.Value);
 
             foreach (DictionaryEntry entry in sortedScores)
             {
              Player player = (Player)entry.Key;
-             int score = (int)entry.Value;
+             int score = (int)entry.Value!;
 
              Console.WriteLine($"{player.Name}: {score}");
             }

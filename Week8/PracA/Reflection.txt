@@ -1,0 +1,12 @@
+Task1
+1. What happened when you tried to add the (Key: String, Value: int) entry? Why?
+Answer:The String key was added successfully because Hashtable uses object types for keys and values. It can accept different data types.
+2. What happened when you tried to add the duplicate Key?
+Answer:The program threw an ArgumentException because Hashtable does not allow duplicate keys.
+3. Were you able to use LINQ methods when writing your sorting algorithm? Why / why not?
+Answer:Yes, I was able to use LINQ methods. I used Cast<DictionaryEntry>() to convert the Hashtable entries, then used Where() and OrderByDescending() to filter and sort the scores.
+
+
+Task2
+1.Which approach was faster? Append or Build? Why?
+Answer: Build is more faster.Because the Append method makes a new string every time. StringBuilder does not need to do this, so it is faster.
