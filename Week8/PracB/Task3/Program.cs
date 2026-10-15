@@ -7,6 +7,24 @@ namespace program
 {
     class program1
     {
+
+    
+    // Convert an object to JSON and save it to a file
+    public static void FileWriter<T>(string path, T objectToWrite) where T : class
+    {
+        string jsonString = JsonSerializer.Serialize(objectToWrite);
+        File.WriteAllText(path, jsonString);
+    }
+
+    
+    // convert JSON from it back to an object
+    public static T FileReader<T>(string path) where T : class
+    {
+        string jsonString = File.ReadAllText(path);
+        T loadedObject = JsonSerializer.Deserialize<T>(jsonString)!;
+        return loadedObject;
+    }
+
         public static void Main()
     {
         
@@ -17,17 +35,11 @@ namespace program
         players.Add(new Player("Lucia", 70, 35, 12));
         players.Add(new Player("John", 60, 40, 15));
 
-        string jsonString = JsonSerializer.Serialize(players); //convert to Json
-
-        Console.WriteLine(jsonString);
-
-        string path = "./Players.json";//write JSON string in to file
-        File.WriteAllText(path, jsonString);
-
-        string loadedJson = File.ReadAllText(path);
-
-        List<Player> loadedPlayers =
-            JsonSerializer.Deserialize<List<Player>>(loadedJson)!;//Convert from JSON back to List
+        string path = "./Players.json";
+        FileWriter(path, players);
+        
+        // Read the player list from the file 
+        List<Player> loadedPlayers = FileReader<List<Player>>(path);
 
 
         foreach (Player player in loadedPlayers)

@@ -1,0 +1,12 @@
+Task1:
+1.What happens if the text file already exists when you write to it?
+2.What does the @ symbol before the quoted string mean?
+3.Do you need to wrap the file access with using StreamReader and using StreamWriter? What would happen if you don't do this?
+4.How is using the StreamReader different from just File.ReadAllText()?
+
+Task2:
+1.What does the ! symbol at the end of the Deserialize line above do?
+2.What happens if all your Classes properties aren't public?
+
+Task3:
+1.What does where T : class mean?
