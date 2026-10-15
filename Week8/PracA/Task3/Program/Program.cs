@@ -15,6 +15,7 @@ class Program
 
         Stopwatch watch = new();
 
+//Append Method
   
         for (int pass = 1; pass <= iterations; pass++)
         {
