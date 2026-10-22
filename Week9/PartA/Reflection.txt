@@ -1,0 +1,39 @@
+
+
+Task 1 – Building a Graph
+
+        Q1. What sort of Graph have we created? Is it directed / undirected? Cyclic or acyclic? Weighted or unweighted?
+
+We created an undirected, acyclic and unweighted graph. The edges connect nodes in both directions. There are no cycles and no weights.
+
+        Q2. Other than Binary Search Tree and Linked List, what are two other commonly used data structures that are also secretly Graphs?
+
+Two examples are a general tree and a doubly linked list. Both use nodes and edges to connect data
+
+Task 2 – Traversing with BFS
+
+        Q1. Why do we need to create and keep track of which Nodes we've "visited"?
+
+We track visited nodes to avoid checking the same node again. It also prevents infinite loops.
+
+        Q2. In the adjusted graph above, there are 2 correct paths to I, which one does your BFS algorithm take? Why?
+
+BFS takes the path A → C → F → I. This is the shortest path. BFS checks nodes level by level.
+
+        Q3. What is the computational complexity of BFS? What does |V| + |E| mean?
+
+The time complexity of BFS is O(V + E). V means the number of nodes, and E means the number of edges.
+
+Task 3 – Traversing with DFS
+
+        Q1. For the initial graph, which algorithm would find the target faster, BFS or DFS? Why?
+
+DFS is faster in our example. DFS checks 4 nodes, but BFS checks 9 nodes.
+
+        Q2. For the adjusted graph, which algorithm would find the target faster, BFS or DFS? Why?
+
+In our tests, DFS checks 8 nodes and BFS checks 9 nodes. DFS uses fewer checks, but the results can change with the order of nodes.
+
+        Q3. If the algorithms are different, how can the computational complexity of BFS and DFS be the same?
+
+BFS uses a Queue and DFS uses a Stack. They search in different ways, but both can visit all nodes and edges. So both have O(V + E) time complexity.
