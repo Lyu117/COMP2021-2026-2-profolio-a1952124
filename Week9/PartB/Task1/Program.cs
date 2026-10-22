@@ -101,3 +101,45 @@ parents[Start] = null;
 
 priorityQueue.Enqueue(Start, 0);
 
+
+while (priorityQueue.Count > 0)
+{
+    
+    priorityQueue.TryDequeue(
+        out Node current,
+        out int currentDistance
+    );
+
+    if (currentDistance > DistanceList[current])
+    {
+        continue;
+    }
+
+    if (current == target)
+    {
+        break;
+    }
+
+    foreach (var neighbor in current.Edges)
+    {
+        Node nextNode = neighbor.Key;
+
+        int weight = neighbor.Value;
+
+        int newDistance = DistanceList[current] + weight;
+
+        
+        if (newDistance < DistanceList[nextNode])
+        {
+            
+            DistanceList[nextNode] = newDistance;
+
+            
+
+
+            parents[nextNode] = current;
+
+            priorityQueue.Enqueue(nextNode, newDistance);
+        }
+    }
+}
