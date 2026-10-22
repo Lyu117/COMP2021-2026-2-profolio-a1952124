@@ -21,10 +21,10 @@ public class Graph
             Nodes.Add(toNode);
 
         if (!fromNode.Edges.ContainsKey(toNode))
-            fromNode.Edges.Add(toNode);
+            fromNode.Edges.Add(toNode, weight);
 
-        if (!toNode.Edges.Contains(fromNode))
-            toNode.Edges.Add(fromNode);
+        if (!toNode.Edges.ContainsKey(fromNode))
+            toNode.Edges.Add(fromNode, weight);
     }
 
     public override string ToString()
@@ -36,7 +36,7 @@ public class Graph
             result += node.Data + ": ";
 
             result += string.Join(", ",
-                node.Edges.Select(n => n.Data));
+                node.Edges.Select(n => n.Key.Data + " (" + n.Value + ")"));
 
             result += "\n";
         }
