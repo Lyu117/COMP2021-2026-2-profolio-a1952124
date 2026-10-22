@@ -78,7 +78,7 @@ Node target = End;
 Dictionary<Node, int> DistanceList =
     new Dictionary<Node, int>();
 
-// 距离越小，优先级越高
+
 PriorityQueue<Node, int> priorityQueue =
     new PriorityQueue<Node, int>();
 
