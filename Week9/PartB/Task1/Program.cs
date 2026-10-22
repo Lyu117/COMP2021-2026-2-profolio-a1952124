@@ -143,3 +143,39 @@ while (priorityQueue.Count > 0)
         }
     }
 }
+
+ 
+Console.WriteLine();
+Console.WriteLine("=== Dijkstra Shortest Path ===");
+
+
+if (DistanceList[target] == int.MaxValue)
+{
+    Console.WriteLine("No path found.");
+}
+else
+{
+   
+    List<string> path = new List<string>();
+
+
+    Node? node = target;
+
+  
+    while (node != null)
+    {
+      
+        path.Add(node.Data);
+
+       
+        node = parents[node];
+    }
+
+
+    path.Reverse();
+
+    Console.WriteLine(string.Join(" -> ", path));
+
+ 
+    Console.WriteLine("The Total Distance is : " + DistanceList[target]);
+}
