@@ -1,0 +1,67 @@
+# Part B – Reflection
+
+## ----------Task 1: Dijkstra's Algorithm
+
+1. Explain, in plain English, how does your implementation of Dijkstra's algorithm work?
+
+My code finds the shortest path from Start to End. First, it sets the distance of Start to 0. Other nodes have a very large distance. Then, it uses a PriorityQueue to find the node with the shortest distance. It checks the next nodes and updates their distances. It also saves the previous nodes. At the end, it uses these nodes to show the shortest path.
+
+2. What is the computational complexity of Dijkstra's? Why is it different than BFS / DFS?
+
+My Dijkstra algorithm uses a PriorityQueue. Its time complexity is O((V + E) log V). V is the number of nodes, and E is the number of edges. BFS and DFS have a time complexity of O(V + E). Dijkstra is different because it checks the weights of the edges. BFS and DFS do not use weights to find the shortest path.
+
+## -------Task 2: AI Code Generation
+
+1. What AI tool did you use?
+
+I used ChatGPT (GPT-6) to write the C# code for Dijkstra's algorithm.
+
+2. What were some of the prompts you used?
+
+I asked ChatGPT to write a full Dijkstra algorithm in C#. I asked it to use the Horse graph from my task. I also asked it to use a Dictionary and a PriorityQueue. The code needed to work with `dotnet run`.
+
+3. Did the AI one-shot the problem, or did it require revision? How many rounds did it take?
+
+The AI did not get everything right the first time. The first code used the wrong graph data. It also treated the bee nodes in the wrong way. I gave the AI more information and pictures from my task. After a few rounds, it made a new version with the correct graph data.
+
+4. What was one of the ways the AI code was substantially different to your approach?
+
+My code used Graph and Node classes. The AI code used a Dictionary to store the graph. It did not need separate Graph and Node classes.
+
+5. Compared to your code, what was one aspect the AI tool did better?
+
+The AI code was easier to read. It used different methods for different tasks. This made the code easier to understand.
+
+6. Compared to your code, what was one aspect the AI tool did worse?
+
+The AI made mistakes in the first version. It used the wrong graph data and did not understand the bee nodes correctly. I had to give it more information to fix the code.
+
+## ----------Task 3 – Reflection
+
+1. What's been your favourite C# feature?
+
+My favourite C# feature is Dictionary. It can store data using keys and values. I think it is easy to use and very useful.
+
+2. What's been your most hated C# feature?
+
+My most hated C# feature is LINQ. Sometimes it is hard for me to understand. I often need more time to learn how to use it.
+
+3. What was the easiest prac or topic for you, and why?
+
+The easiest topic for me was List and Dictionary. The code was simple, and I could understand it quickly. I also used them in many tasks.
+
+4. What was the most fun prac or topic for you, and why?
+
+The most fun prac was Dijkstra's algorithm. I liked finding the shortest path in the horse graph. It was interesting to see how the algorithm worked.
+
+5. What's one area you're going to revise before the exam?
+
+I am going to revise LINQ before the exam. I still find some LINQ code difficult. I want to practise more examples.
+
+6. What's one piece of advice you would give to new students taking SDP next semester?
+
+My advice is to practise coding every week. Do not leave all the work until the last day. Ask questions when you do not understand something.
+
+7. What's one suggestion you have for the course coordinator to make the course better?
+
+I think the course could have more simple code examples. Some topics are difficult for beginners. More examples would help students understand the lessons better.
